@@ -45,8 +45,24 @@
 
 % defining a warning box
 \definecolor{orang}{RGB}{255,155,0}
+\definecolor{redd}{RGB}{186,17,2}
 
 \newtcolorbox[auto counter,number within=section]{warningbox}[1][]{
+  enhanced jigsaw,colback=white,colframe=redd,coltitle=redd,
+  fonttitle=\bfseries\sffamily,
+  sharp corners,
+  detach title,
+  leftrule=22mm,
+  % What you need %%%%%%%%%%%%
+  underlay unbroken and first={\node[below,text=white,anchor=east]
+  at ([xshift=-22.5pt]interior.base west) {\Huge  \textbf{!}};},
+  %%%%%%%%%%%%%%%%%%%%%%%%
+  breakable,pad at break=1mm,
+  #1,
+  code={\ifdefempty{\tcbtitletext}{}{\tcbset{before upper={\tcbtitle\par\medskip}}}},
+}
+
+\newtcolorbox[auto counter,number within=section]{notebox}[1][]{
   enhanced jigsaw,colback=white,colframe=orang,coltitle=orang,
   fonttitle=\bfseries\sffamily,
   sharp corners,

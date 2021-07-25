@@ -3,7 +3,7 @@
     
 \section{Motor Controller} \label{sec:motorcontroller}
 
-The motors used in this guide, the N20 motors, have a stall current of 1.6A (see section \ref{sec:motor} for what stall current means). The digital pins on an Arduino Uno supply at most 40mA. This is not enough to power the motors.\\ 
+The motors used in this guide, the N20 motors, have a stall current of 1.6A (see section \ref{sec:motor} for what stall current means). The digital pins on an Arduino Nano supply at most 40mA. This is not enough to power the motors.\\ 
 
 To get around this, the Arduino instead interfaces with a \textbf{motor controller}. Motor controllers have a separate power supply that can supply enough current to drive the motor. Motor controllers also have digital inputs that allow control of the motor. \\
 
@@ -267,7 +267,7 @@ Being able to read diagrams such as in Figure \ref{fig:l293d-block-diagram} real
 The hollow circles along the outside rectangle of the block diagram represent the pin outs on the microchip, they can be matched up with labelled pins in Figure \ref{fig:l293d-pinout}. There is also a 20 pin variant of this H-bridge, which is why some of the pin labels on the block diagram are greater than 16.\\
 
 
-The hollow triangles in the block diagram are buffers that isolate the the input signal from the enable line. \\
+The hollow triangles in the block diagram are buffers that isolate the input signal from the enable line. \\
 
 
 
