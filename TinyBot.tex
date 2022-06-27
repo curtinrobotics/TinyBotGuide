@@ -19,7 +19,7 @@
 \usepackage{courier}
 \usepackage{placeins}
 \usepackage{subfiles}
-
+\usepackage{pdflscape, rotating}
 \graphicspath{{resources/}}
 
 
@@ -293,24 +293,6 @@ If you choose to use the clubs components, they must all be returned after you f
 
 Additional sensors can be bought and integrated with TinyBot, however that is not covered in this project guide. If you are intending to integrate sensors with TinyBot, it is recommended to use an Arduino Uno or Mega, this change can be made with only minor adjustments to the design in the construction phase. \\
 
-\begin{tabular}{p{0.15\textwidth} p{0.1\textwidth} p{0.1\textwidth} p{0.55\textwidth}}
-    \toprule
-    Component & Quantity & Price & Sources \\ \midrule
-    Arduino Nano & 1 & \$5-\$80 & Arduino's are discussed in Section \ref{sec:microcontroller}. A genuine Arduino will cost about \$80, however Arduino clones can be bought online for as little as \$5. Ebay is a good starting point for finding an Arduino.  \\[2.5cm]
-    Breadboard & 1 & ~\$8& Altronics sells breadboards at about \$7 each, which is about the same price as you'll find on eBay. Ali Express has them much cheaper but shipping can take quite a while. \\[2cm]
-    N20 Motor & 2 & \$5 - \$20 & There are 3 ways to source these motors: \begin{itemize}
-      \item From AliExpress, eBay, or other online stores
-      \item From Altronics/Jaycar - though they are significantly more expensive sourced this way
-      \item Provided by the club
-    \end{itemize} \\[2cm]
-    L293D Dual H-Bridge & 1 & \$7 - \$16&   Altronics stocks both motor drivers and motor controllers, though they can also be found on eBay and sites such as RS components. For this tutorial, only a \href{https://www.altronics.com.au/p/z2900-l293d-motor-drive-ic/}{basic H-bridge driver} is necessary (costing about \$7), though more expensive motor controllers can be used as well. \\[3cm]
-
-    Wheels & 2& \$0 & The wheels for this project are 3D printed. The STL files are provided in this repository if you wish to print them, though the club has printed some copies that you can use instead. \\[2cm]
-    Caster Wheel & 1 & \$0 & The caster wheel consists of 2 parts, a marble and it's 3D printed casing. The 3D print will be supplied by the club at no charge - and just like with the wheels, the STL is available in this repository. Marbles are also supplied by the club. \\[2.5cm]
-
-    Core Flute / Cardboard & - & - & The base of TinyBot can be built out of any material you have on hard given it is stiff enough to support the components. The club uses core flute, but cardboard, wood, hard plastics, etc. can be used instead.\\
-   \bottomrule
-\end{tabular}
 
 \bigskip
 
@@ -354,6 +336,9 @@ These challenges require knowledge that is not covered in this guide.
     \item Make a robot that bounces of walls or other objects in its way (requires an ultrasonic sensor)
 \end{itemize}
 TinyBot has been designed so that sensors and additional functionality can be easily added, adding components to a breadboard is fairly trivial. However, the programming aspect of these extra challenging challenges is quite involved.
+
+\appendix
+\subfile{sections/appendix.tex}
 
 
 \end{document}

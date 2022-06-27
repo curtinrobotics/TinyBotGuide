@@ -8,53 +8,62 @@ To follow this guide it is not necessary to have an understanding of how motors 
 
 \bigskip
 
-Motors turn in proportion to the amount of current put through them. More current means a faster motor. 
+\begin{figure}[h!]
+    \centering
+    \caption{TODO: Picture of a motor with coils and current}
+\end{figure}
 
+Motors turn in proportion to the amount of current put through them. More current means a faster motor. 
 When a motor stalls, it stops rotating. This happens when there is more force acting on the motor shaft than the motor can overcome. The stall current of a motor is the maximum current drawn when a motor stalls, in other words, applying its maximum torque - known as stall torque. \\
 
-Similarly, free current is the current drawn when the motor is rotating freely, under no load. 
+Similarly, free current is the current drawn when the motor is rotating freely, under no load - free current can also be thought of as the amount of current that has to be applied for a motor to overcome its internal friction. The stall current is usually much larger than the free current, and keeping a motor in a stalled condition can lead to overheating and damage to the motor due to the high current through it. 
 
 \bigskip
 
 
-Each motor has a certain amount of torque it can provide, this depends greatly on the size and current draw of the motor. The speed of a motor also depends on the current going through the motor. 
-% Gearboxes can be attached to a motor to increase the amount of torque provided, and change the rotations per minute (RPM) of the motor. 
 
-% $TODO - Someone who knows about gearboxes, please complete this section. 
-% \subsection{Gear Boxes}
+Each motor has a certain amount of torque it can provide, which depends greatly on the size and current draw of the motor. The speed of a motor also depends on the current going through the motor. Motor torque and speed are proportional, with torque increasing as speed decreases. This is because the mechanical power of a motor depends on torque $\times$ speed ($P=\tau \omega$), the power of a motor is constant meaning that when $\tau$ increases, $\omega$ must decrease. 
+\bigskip
 
-\begin{minipage}[t]{0.6\textwidth}\vspace{0pt}
+It is possible to control the speed of a motor by controlling the input voltage, however this often results in high speeds and low torques. When we want to use motors to drive a robot around we're going to need relatively high torque from our motors as we need to overcome friction between the robot's wheels and the ground. To increase the torque of a motor, we want to use a gearbox. 
 
-    To control the motor speed and torque, without controlling the amount of current going through the motor, 
 
-    A gear box is useful for controlling the speed and torque outputs for motors. A motor has a maximum torque it can operate at before it starts to fail, this is known as a stall torque. If you want to increase the stall torque, you will need to lower the output speed, which can be accomplished with a gear box. The important factors to consider are the number of teeth of the gears for the input and output gears. The torque and speed are inversely proportional. The value of these ratios compared can be calculated as follows.\\
+Gearboxes chain together different sized gears (gear size is commonly measured by the number of teeth on the gear which leads to a larger diameter), with the ratio of teeth size determining the output speed/torque. The ratio can be calculated as 
+
+
+% A gear box is useful for controlling the speed and torque outputs for motors. A motor has a maximum torque it can operate at before it starts to fail, this is known as a stall torque. If you want to increase the stall torque, you will need to lower the output speed, which can be accomplished with a gear box. The important factors to consider are the number of teeth of the gears for the input and output gears. The torque and speed are inversely proportional. The value of these ratios compared can be calculated as follows.\\
     
-\end{minipage}
-\begin{minipage}[t]{0.4\textwidth}\vspace{0pt}
-    \begin{center}
-        \includegraphics[width=\textwidth]{gear_labelled.png}
-        \captionof{figure}{Driver and Driven Gear}
-        \label{fig:gear-driver-driven}
-    \end{center}
-\end{minipage}
-
-
 \[ R = \frac{N_1}{N_1} = \frac{D_1}{D_1} = \frac{\omega_2}{\omega_1} \]
 
-Angular velocity = $\omega$, diameter of gear = D and number of teeth = N. Notice figure above, the more teeth an output gear has, the lower the angular velocity and larger the gear. It is worth noting that when there are only two gears, the output gear rotates in the opposite direction.
+In the above equation, $\omega$ is the angular velocity, $D$ is the diameter of the gear, and $N$ is the number of teeth. The ratio can be expressed in plain English as a higher number of teeth meaning a smaller angular velocity and a larger diameter gear. This makes sense intuitively, in Figure \ref{fig:gear-driver-driven} gear A has 1/3 the number of teeth of gear B. This means that gear A will fully rotate 3 times in the time it takes gear B to rotate once. The gears must be rotating at the same angular velocty as they are mechanically linked via the gear teeth, and to maintain power (as no energy can be destroyed) gear B must have more torque than gear A. 
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+    \includegraphics[width=0.4\textwidth]{gear_labelled.png}
+        \captionof{figure}{Driver and Driven Gear}
+        \label{fig:gear-driver-driven}
+\end{wrapfigure}
+
+% Angular velocity = $\omega$, diameter of gear = D and number of teeth = N. Notice figure above, the more teeth an output gear has, the lower the angular velocity and larger the gear. It is worth noting that when there are only two gears, the output gear rotates in the opposite direction.
+
+% \bigskip
+
+% Now that we can relate the angular velocity and the size of a gear, we can calculate the torque. Calculating torque relies on knowing the force ($F$) and the distance (also known as the radius $r$) - and has equation $T = Fr$. However, the force between the two gears is being applied tangentially - which implies 
+
+% Now for calculating torque. \(T=F \times r\), where $F$ = force and $r$ = radius (usually we say $T = F*r*\sin(\theta)$, but since the gears are acting perpendicular to each other $\theta = 90^o$ i.e. $\sin{\theta} = 1$, therefore can be eliminated from the equation). This means the larger the output gear, the higher the torque. The torque of the input gear is supplied by a motor and the output torque is affected. \\
+\bigskip
+
+We can take advantage of this to increase the output torque of a gearbox to whatever torque we need by simply changing the gear ratios within a gearbox. It is possible to buy both geared and non-geared motors. It is usually easy to spot when a motor has a gearbox attached TODO: images of geared and non geared motors. For this project, make sure you have a geared motor - non-geared motors will not be able to supply enough torque for your robot to move. 
 
 
-Now for calculating torque. \(T=F \times r\), where $F$ = force and $r$ = radius (usually we say $T = F*r*\sin(\theta)$, but since the gears are acting perpendicular to each other $\theta = 90^o$ i.e. $\sin{\theta} = 1$, therefore can be eliminated from the equation). This means the larger the output gear, the higher the torque. The torque of the input gear is supplied by a motor and the output torque is affected. \\
+% When connecting multiple gears, we call this a gear train. There are two types of gear trains, simple and complex. Simple gear trains are much like their name, simple. They connect next to each other and you only need to do the calculation for the first gear as an input gear and last gear as the output gear. These are useful for rapidly increasing torque or speed. Compound gear trains are slightly different and require a bit more thinking. A compound gear train means there can be multiple gears on the same shaft, meaning the gear ratio of the entire system will need to be calculated with each connecting gear and transfer the ratios through each individual shaft. You won’t have to deal with compound gear trains for this project, but feel free to investigate it more.
+% To summarise gears, the ratio of your input gear to output gear affects the characteristics of your output performance. If you want a higher torque use a larger output gear. If you want more speed, use a smaller output gear.
 
-When connecting multiple gears, we call this a gear train. There are two types of gear trains, simple and complex. Simple gear trains are much like their name, simple. They connect next to each other and you only need to do the calculation for the first gear as an input gear and last gear as the output gear. These are useful for rapidly increasing torque or speed. Compound gear trains are slightly different and require a bit more thinking. A compound gear train means there can be multiple gears on the same shaft, meaning the gear ratio of the entire system will need to be calculated with each connecting gear and transfer the ratios through each individual shaft. You won’t have to deal with compound gear trains for this project, but feel free to investigate it more.
-To summarise gears, the ratio of your input gear to output gear affects the characteristics of your output performance. If you want a higher torque use a larger output gear. If you want more speed, use a smaller output gear.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics{compound_gears.png}
-    \label{fig:gear-complex}
-    \caption{Complex Gear Train}
-\end{figure}
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics{compound_gears.png}
+%     \label{fig:gear-complex}
+%     \caption{Complex Gear Train}
+% \end{figure}
 
 
 \end{document}
