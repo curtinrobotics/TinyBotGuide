@@ -292,7 +292,7 @@ The table on the following page shows the components used on TinyBot; this table
 
 
 
-If you choose to use the clubs components, they must all be returned after you finish this guide -  excluding the 3D printed parts which you may keep. You can choose to purchase the TinyBot you built, talk to the project lead for how much your TinyBot costs to buy.\\
+If you choose to use the clubs components, they must all be returned after you finish this guide. You can choose to purchase the TinyBot you built, talk to the project lead for how much your TinyBot costs to buy.\\
 
 Additional sensors can be bought and integrated with TinyBot, however that is not covered in this project guide. If you are intending to integrate sensors with TinyBot, it is recommended to use an Arduino Uno or Mega, this change can be made with only minor adjustments to the design in the construction phase. \\
 
@@ -301,9 +301,9 @@ Additional sensors can be bought and integrated with TinyBot, however that is no
 
 % \section{Components Table}
 % \begin{sidewaystable}[h]
-    \begin{xltabular}{\linewidth}{p{0.15\textwidth} p{0.1\textwidth} p{0.1\textwidth} X}
+    \begin{xltabular}{\linewidth}{p{0.15\textwidth} p{0.05\textwidth} p{0.1\textwidth} X}
         \toprule
-        Component & Quantity & Price & Sources \\ \midrule
+        Component & Num. & Price & Sources \\ \midrule
         Arduino Nano & 1 & \$5-\$80 & Arduino's are discussed in Section \ref{sec:microcontroller}. A genuine Arduino will cost about \$80, however Arduino clones can be bought online for as little as \$5. Ebay is a good starting point for finding an Arduino.  \\
         Breadboard & 1 & ~\$8& Altronics sells breadboards at about \$7 each, which is about the same price as you'll find on eBay. Ali Express has them much cheaper but shipping can take quite a while. \\[2cm]
         Geared DC Motor & 2 & \$5 - \$20 & The motors used in this guide are N20 motors (small and strong), however any \textbf{geared} DC motor can be use (such as \href{https://www.jaycar.com.au/dc-geared-motor-with-rubber-wheel/p/YG2900}{these}). There are 3 ways to source N20 motors: \begin{itemize}
@@ -312,13 +312,14 @@ Additional sensors can be bought and integrated with TinyBot, however that is no
             \item Provided by the club
         \end{itemize} 
         \\
-        L293D Dual H-Bridge & 1 & \$7 - \$16&   Altronics stocks both motor drivers and motor controllers, though they can also be found on eBay and sites such as RS components. For this tutorial, only a \href{https://www.altronics.com.au/p/z2900-l293d-motor-drive-ic/}{basic H-bridge driver} is necessary (costing about \$7), though more expensive motor controllers can be used as well. \\[1cm]
+        L293D Dual H-Bridge & 1 & \$7 - \$16&   Altronics stocks both motor drivers and motor controllers, though they can also be found on eBay and sites such as RS components. For this tutorial, only a \href{https://www.altronics.com.au/p/z2900-l293d-motor-drive-ic/}{basic H-bridge driver} is necessary (costing about \$7), though more expensive motor controllers can be used as well. \\[3cm]
         
-        Wheels & 2& \$0 & The wheels for this project are 3D printed. The STL files are provided in this repository if you wish to print them, though the club has printed some copies that you can use instead.  It is also possible to buy suitable wheels from \href{https://www.altronics.com.au/p/j0102-white-plastic-wheel-for-micro-n20-motors/}{Altronics} and \href{https://www.jaycar.com.au/duinotech-micro-wheels-tyres-sold-as-a-pair/p/YG2902}{Jaycar} \\[1cm]
-        Caster Wheel & 1 & \$0 & The caster wheel consists of 2 parts, a marble and it's 3D printed casing. The 3D print will be supplied by the club at no charge - and just like with the wheels, the STL is available in this repository. Marbles are also supplied by the club. \\[1cm]
+        Wheels & 2& \$0 & The wheels for this project are 3D printed. The STL files are provided in this repository if you wish to print them, though the club has printed some copies that you can use instead.  It is also possible to buy suitable wheels from \href{https://www.altronics.com.au/p/j0102-white-plastic-wheel-for-micro-n20-motors/}{Altronics} and \href{https://www.jaycar.com.au/duinotech-micro-wheels-tyres-sold-as-a-pair/p/YG2902}{Jaycar} \\[3cm]
+
+        Caster Wheel & 1 & \$0 & The caster wheel consists of 2 parts, a marble and it's 3D printed casing. The 3D print will be supplied by the club at no charge - and just like with the wheels, the STL is available in this repository. Marbles are also supplied by the club. \\[2.5cm]
         
-        Core Flute / Cardboard & - & - & The base of TinyBot can be built out of any material you have on hard given it is stiff enough to support the components. The club uses core flute, but cardboard, wood, hard plastics, etc. can be used instead.\\[1cm]
-        Wires & - & - & Wires are provided by the club, or can be purchased from Altronics - options include \href{https://www.altronics.com.au/p/p1018a-prototyping-breadboard-wire-packs-350pcs/}{assorted length solid core} and \href{https://www.altronics.com.au/p/p1017-prototyping-jumper-wires-mixed-for-breadboard-arduino/}{standard jumper wires}\\[1cm]
+        Core Flute / Cardboard & - & - & The base of TinyBot can be built out of any material you have on hard given it is stiff enough to support the components. The club uses core flute, but cardboard, wood, hard plastics, etc. can be used instead.\\[2.5cm]
+        Wires & - & - & Wires are provided by the club, or can be purchased from Altronics - options include \href{https://www.altronics.com.au/p/p1018a-prototyping-breadboard-wire-packs-350pcs/}{assorted length solid core} and \href{https://www.altronics.com.au/p/p1017-prototyping-jumper-wires-mixed-for-breadboard-arduino/}{standard jumper wires}\\[1.5cm]
         9V Battery & 1 & - & Also supplied by the club. Can be purchased from Coles, Altronics, Bunnings, etc.\\[1cm]
         9V Battery Snap Clip & 1 & - & Also supplied by the club. Can be purchased from \href{https://www.altronics.com.au/p/p0455-9v-battery-snap/}{Altronics} \\[1cm]
         \bottomrule
@@ -360,7 +361,7 @@ Additional sensors can be bought and integrated with TinyBot, however that is no
 % \pagebreak
 % \subfile{sections/wiring.tex}
 
-\pagebreak
+% \pagebreak
 \subfile{sections/construction.tex}
 
 \pagebreak
@@ -371,8 +372,14 @@ Additional sensors can be bought and integrated with TinyBot, however that is no
 
 These challenges can be done using only the knowledge and skills gained in this guide. 
 \begin{itemize}
-    \item Turn the robot around on the spot - think about what way each motor should rotate to turn on the spot
-    \item Drive in a square - a square is just a line and a 90 degree turn, repeated 4 times
+    \item Turn the robot around on the spot
+    \begin{itemize}
+      \item think about what way each motor should rotate to turn on the spot
+    \end{itemize} 
+    \item Drive in a square 
+    \begin{itemize}
+      \item a square is just a line and a 90 degree turn, repeated 4 times
+    \end{itemize}
 \end{itemize}
 
 \bigskip
@@ -384,6 +391,10 @@ These challenges require knowledge that is not covered in this guide.
     \item Make a robot that bounces of walls or other objects in its way (requires an ultrasonic sensor)
 \end{itemize}
 TinyBot has been designed so that sensors and additional functionality can be easily added, adding components to a breadboard is fairly trivial. However, the programming aspect of these extra challenging challenges are quite involved.
+
+\bigskip
+
+\textbf{Bonus Challenge:} decorate TinyBot! Glitter, paint, coloured paper, go crazy! The best looking TinyBots get a social media post all to themselves (plus their maker of course)!
 
 \appendix
 % \subfile{sections/appendix.tex}
