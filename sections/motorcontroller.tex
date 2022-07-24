@@ -200,7 +200,7 @@ While working on this guide, don't worry if your H-bridge stops working suddenly
     A motor controller has a lot more features than a motor driver. See, for example, the RoboClaw  (see Figure \ref{fig:roboclaw}) which has in built features such as PID tuning, data logging, diagnostic LEDs, and serial control. \\
     
     
-    The in-built control modes, as well as being capable of serial communication, is present only in motor controllers. Motor drivers are far simpler in comparison. \\
+    The in-built control modes, as well as being capable of serial communication, are present only in motor controllers. Motor drivers are far simpler in comparison. \\
 
 \end{minipage}
 
@@ -211,7 +211,7 @@ The information in this section is included for information's sake, you don't ne
 
 
 
-Datasheets hold a lot of useful information about microchips, the data sheet for the L293D H-Bridge can can be found online (linked \href{https://www.altronics.com.au/p/z2900-l293d-motor-drive-ic/}{here}).\\
+Datasheets hold a lot of useful information about microchips, the data sheet for the L293D H-Bridge can can be found online (linked \href{https://www.altronics.com.au/p/z2900-l293d-motor-drive-ic/}{here}). The L293D is a dual H-bridge IC, meaning that it can control two motors at once. Technically, the L293D is a quadruple half H-Bridge driver - which allows the same functionality as a dual H-bridge, but makes the circuit more robust and unlikely to be shorted by opening the wrong pins. \\
 
 
 
@@ -259,20 +259,23 @@ Datasheets hold a lot of useful information about microchips, the data sheet for
 
 \FloatBarrier
 
+Something important to note from the pinout in Figure \ref{fig:l293d-pinout} is the pins labelled enable 1 and enable 2. These pins need to be set to a positive voltage for the motor to be enabled. 
+\bigskip
+
 
 Being able to read diagrams such as in Figure \ref{fig:l293d-block-diagram} really depends on whether or not you know what each symbol means. \\
 
 % Block diagrams such as in Figure \ref{fig:l293d-block-diagram} can be quite confusing to read; there's a lot of symbols that you may or may not know. 
 
-The hollow circles along the outside rectangle of the block diagram represent the pin outs on the microchip, they can be matched up with labelled pins in Figure \ref{fig:l293d-pinout}. There is also a 20 pin variant of this H-bridge, which is why some of the pin labels on the block diagram are greater than 16.\\
+The hollow circles along the outside rectangle of the block diagram represent the pin outs on the microchip, they can be matched up with labelled pins in Figure \ref{fig:l293d-pinout}. There is also a 20 pin variant of this H-bridge, which is why some of the pin labels on the block diagram are greater than 16.
 
-
-The hollow triangles in the block diagram are buffers that isolate the input signal from the enable line. \\
-
-
+The hollow triangles in the block diagram are buffers that isolate the input signal from the enable line. 
 
 The bold black triangle and line combinations represent components called Transistors. 
 
+\bigskip
+
+The pinouts in Figure \ref{fig:l293d-pinout} are really important when wiring up the H-Bridge, as discussed later in Section \ref{sec:construction}.
 
 
 

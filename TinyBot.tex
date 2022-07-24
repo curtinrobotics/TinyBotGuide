@@ -7,6 +7,7 @@
 \usepackage{listings, ulem}
 \usepackage[most]{tcolorbox}
 \usepackage{multirow, multicol, tabularx, booktabs}
+\usepackage{xltabular}
 \usepackage{fancyhdr}
 \usepackage{tikz}
 \usepackage{hyperref}
@@ -19,7 +20,7 @@
 \usepackage{courier}
 \usepackage{placeins}
 \usepackage{subfiles}
-
+\usepackage{pdflscape, rotating}
 \graphicspath{{resources/}}
 
 
@@ -287,31 +288,61 @@ The below knowledge is assumed for this project. Feel free to ask other CRoC mem
 
 \section{Components}\label{sec:components}
  
-The table on the following page shows the components used on TinyBot; this table is only important if you wish to purchase the components yourself in order to keep TinyBot upon completion.
+The table on the following page shows the components used on TinyBot; this table is only important if you wish to purchase the components yourself in order to keep TinyBot upon completion. When purchasing components, ask about a student discount (if you're a member of CRoC you get an \textbf{extra discount at Altronics} as well, just say you're a member of the Curtin Robotics Club at the counter). \\
 
-If you choose to use the clubs components, they must all be returned after you finish this guide -  excluding the 3D printed parts which you may keep. \\
+
+
+If you choose to use the clubs components, they must all be returned after you finish this guide. You can choose to purchase the TinyBot you built, talk to the project lead for how much your TinyBot costs to buy.\\
 
 Additional sensors can be bought and integrated with TinyBot, however that is not covered in this project guide. If you are intending to integrate sensors with TinyBot, it is recommended to use an Arduino Uno or Mega, this change can be made with only minor adjustments to the design in the construction phase. \\
 
-\begin{tabular}{p{0.15\textwidth} p{0.1\textwidth} p{0.1\textwidth} p{0.55\textwidth}}
-    \toprule
-    Component & Quantity & Price & Sources \\ \midrule
-    Arduino Nano & 1 & \$5-\$80 & Arduino's are discussed in Section \ref{sec:microcontroller}. A genuine Arduino will cost about \$80, however Arduino clones can be bought online for as little as \$5. Ebay is a good starting point for finding an Arduino.  \\[2.5cm]
-    Breadboard & 1 & ~\$8& Altronics sells breadboards at about \$7 each, which is about the same price as you'll find on eBay. Ali Express has them much cheaper but shipping can take quite a while. \\[2cm]
-    N20 Motor & 2 & \$5 - \$20 & There are 3 ways to source these motors: \begin{itemize}
-      \item From AliExpress, eBay, or other online stores
-      \item From Altronics/Jaycar - though they are significantly more expensive sourced this way
-      \item Provided by the club
-    \end{itemize} \\[2cm]
-    L293D Dual H-Bridge & 1 & \$7 - \$16&   Altronics stocks both motor drivers and motor controllers, though they can also be found on eBay and sites such as RS components. For this tutorial, only a \href{https://www.altronics.com.au/p/z2900-l293d-motor-drive-ic/}{basic H-bridge driver} is necessary (costing about \$7), though more expensive motor controllers can be used as well. \\[3cm]
 
-    Wheels & 2& \$0 & The wheels for this project are 3D printed. The STL files are provided in this repository if you wish to print them, though the club has printed some copies that you can use instead. \\[2cm]
-    Caster Wheel & 1 & \$0 & The caster wheel consists of 2 parts, a marble and it's 3D printed casing. The 3D print will be supplied by the club at no charge - and just like with the wheels, the STL is available in this repository. Marbles are also supplied by the club. \\[2.5cm]
+% \begin{landscape}
 
-    Core Flute / Cardboard & - & - & The base of TinyBot can be built out of any material you have on hard given it is stiff enough to support the components. The club uses core flute, but cardboard, wood, hard plastics, etc. can be used instead.\\
-   \bottomrule
-\end{tabular}
+% \section{Components Table}
+% \begin{sidewaystable}[h]
+    \begin{xltabular}{\linewidth}{p{0.15\textwidth} p{0.05\textwidth} p{0.1\textwidth} X}
+        \toprule
+        Component & Num. & Price & Sources \\ \midrule
+        Arduino Nano & 1 & \$5-\$80 & Arduino's are discussed in Section \ref{sec:microcontroller}. A genuine Arduino will cost about \$80, however Arduino clones can be bought online for as little as \$5. Ebay is a good starting point for finding an Arduino.  \\
+        Breadboard & 1 & ~\$8& Altronics sells breadboards at about \$7 each, which is about the same price as you'll find on eBay. Ali Express has them much cheaper but shipping can take quite a while. \\[2cm]
+        Geared DC Motor & 2 & \$5 - \$20 & The motors used in this guide are N20 motors (small and strong), however any \textbf{geared} DC motor can be use (such as \href{https://www.jaycar.com.au/dc-geared-motor-with-rubber-wheel/p/YG2900}{these}). There are 3 ways to source N20 motors: \begin{itemize}
+            \item From AliExpress, eBay, or other online stores
+            \item From \href{https://www.altronics.com.au/p/j0054-micro-m20-geared-motor-150:1-50-200rpm/}{Altronics} - though they are significantly more expensive sourced this way
+            \item Provided by the club
+        \end{itemize} 
+        \\
+        L293D Dual H-Bridge & 1 & \$7 - \$16&   Altronics stocks both motor drivers and motor controllers, though they can also be found on eBay and sites such as RS components. For this tutorial, only a \href{https://www.altronics.com.au/p/z2900-l293d-motor-drive-ic/}{basic H-bridge driver} is necessary (costing about \$7), though more expensive motor controllers can be used as well. \\[3cm]
+        
+        Wheels & 2& \$0 & The wheels for this project are 3D printed. The STL files are provided in this repository if you wish to print them, though the club has printed some copies that you can use instead.  It is also possible to buy suitable wheels from \href{https://www.altronics.com.au/p/j0102-white-plastic-wheel-for-micro-n20-motors/}{Altronics} and \href{https://www.jaycar.com.au/duinotech-micro-wheels-tyres-sold-as-a-pair/p/YG2902}{Jaycar} \\[3cm]
 
+        Caster Wheel & 1 & \$0 & The caster wheel consists of 2 parts, a marble and it's 3D printed casing. The 3D print will be supplied by the club at no charge - and just like with the wheels, the STL is available in this repository. Marbles are also supplied by the club. \\[2.5cm]
+        
+        Core Flute / Cardboard & - & - & The base of TinyBot can be built out of any material you have on hard given it is stiff enough to support the components. The club uses core flute, but cardboard, wood, hard plastics, etc. can be used instead.\\[2.5cm]
+        Wires & - & - & Wires are provided by the club, or can be purchased from Altronics - options include \href{https://www.altronics.com.au/p/p1018a-prototyping-breadboard-wire-packs-350pcs/}{assorted length solid core} and \href{https://www.altronics.com.au/p/p1017-prototyping-jumper-wires-mixed-for-breadboard-arduino/}{standard jumper wires}\\[1.5cm]
+        9V Battery & 1 & - & Also supplied by the club. Can be purchased from Coles, Altronics, Bunnings, etc.\\[1cm]
+        9V Battery Snap Clip & 1 & - & Also supplied by the club. Can be purchased from \href{https://www.altronics.com.au/p/p0455-9v-battery-snap/}{Altronics} \\[1cm]
+        \bottomrule
+    \end{xltabular}
+% \end{sidewaystable}
+\pagebreak
+\begin{notebox}
+    There are two different kinds of wires, solid core and multi core (also called stranded wire). \\
+
+    
+    Multicore wire is more common, and is better suited for soldering as the strands in the two wires can mesh together and the solder wraps around all the strands forming a better bond between the wires. Multicore wire is annoying to use with breadboards as individual strands can be bent and not plug in correctly. This can often be fixed by "tinning" the wires, where the stripped ends of the wires are coated in a thin layer of solder to hold all the strands together.\\
+
+    Solid core wire is made of a single thicker strand of wire, making it better for bread boarding as there are no thin strands to be pushed out of shape. However, solid core wire is terrible for soldering as good connections are hard to ensure. \\
+
+
+    % Solid core wire is better for prototyping with breadboards as it is easier to plug the wire into the board. Multicore wire is better for soldering as a better connection is made between two pieces of multicore wire as the strands can mesh together, the solder also wraps around all the strands and forms a better bond between the wires. \\
+
+    % Solid core is very useful when using breadboards where as multicore is better for soldering. 
+    The club has both solid core and multi core wire, double check you have solid core on hand as this will make wiring the circuit much easier. Solid core wire is also very easy to cut to length to create neater looking circuits. \\
+    
+\end{notebox}
+
+% \end{landscape}
 \bigskip
 
 
@@ -328,9 +359,9 @@ Additional sensors can be bought and integrated with TinyBot, however that is no
 \subfile{sections/arduino_intro.tex}
 
 % \pagebreak
-\subfile{sections/wiring.tex}
+% \subfile{sections/wiring.tex}
 
-\pagebreak
+% \pagebreak
 \subfile{sections/construction.tex}
 
 \pagebreak
@@ -342,7 +373,13 @@ Additional sensors can be bought and integrated with TinyBot, however that is no
 These challenges can be done using only the knowledge and skills gained in this guide. 
 \begin{itemize}
     \item Turn the robot around on the spot
-    \item Drive in a square
+    \begin{itemize}
+      \item think about what way each motor should rotate to turn on the spot
+    \end{itemize} 
+    \item Drive in a square 
+    \begin{itemize}
+      \item a square is just a line and a 90 degree turn, repeated 4 times
+    \end{itemize}
 \end{itemize}
 
 \bigskip
@@ -353,7 +390,14 @@ These challenges require knowledge that is not covered in this guide.
     \item Make a line following robot (requires a light sensor)
     \item Make a robot that bounces of walls or other objects in its way (requires an ultrasonic sensor)
 \end{itemize}
-TinyBot has been designed so that sensors and additional functionality can be easily added, adding components to a breadboard is fairly trivial. However, the programming aspect of these extra challenging challenges is quite involved.
+TinyBot has been designed so that sensors and additional functionality can be easily added, adding components to a breadboard is fairly trivial. However, the programming aspect of these extra challenging challenges are quite involved.
+
+\bigskip
+
+\textbf{Bonus Challenge:} decorate TinyBot! Glitter, paint, coloured paper, go crazy! The best looking TinyBots get a social media post all to themselves (plus their maker of course)!
+
+\appendix
+% \subfile{sections/appendix.tex}
 
 
 \end{document}
